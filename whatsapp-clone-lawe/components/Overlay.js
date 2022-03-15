@@ -4,6 +4,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchIcon from "@mui/icons-material/Search";
 import Chats from "./Chats";
 import RightNav from "./RightNav";
+import ChatBubbles from "./ChatBubbles";
+import BottomRight from "./BottomRight";
 const Overlay = () => {
     return(
         <div className=" bg-gray-300 mx-5 my-7 z-50 -mt-16 h-[95vh] shadow-lg ">
@@ -11,7 +13,7 @@ const Overlay = () => {
             <div className="flex">
              {/* Left side */}
 
-                <div className="flex-col lg:w-1/3">
+                <div className="flex-col lg:w-[40%]">
 
                     <div className=" bg-nav-gray flex justify-between items-center">
                         {/* Left side */}
@@ -23,8 +25,8 @@ const Overlay = () => {
                         {/* Icons */}
 
                         <div  className="flex space-x-6 mr-4 items-center">
-                            <MessageIcon className="h-10 w-10 text-gray-500"/>
-                            <MoreVertIcon className="h-10 w-10 text-gray-500"/>
+                            <MessageIcon className="h-8 w-8 text-gray-500"/>
+                            <MoreVertIcon className="h-8 w-8 text-gray-500"/>
                         </div>
 
                         {/* Chats */}
@@ -38,15 +40,26 @@ const Overlay = () => {
 
                     <Chats />
 
+                    
+
                     </div>     
 
 
-                <div>
-                    {/* Right Side */}
-                    <RightNav />
+                    <div className="bg-lightBrown w-full ">
+                        {/* Right Side */}
+                        <RightNav />
 
+                  
+                        <ChatBubbles />
+
+                        
+                        <BottomRight className=""/>
+                        
+
+                    </div>
                 </div>
-        </div>
+
+                
            
         </div>
     )

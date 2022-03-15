@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors:{
         "nav-green":"#0c9789",
-        "nav-gray":"#efefef"
+        "nav-gray":"#efefef",
+        "lightBrown":"#e2dad6"
       }
     },
   },
