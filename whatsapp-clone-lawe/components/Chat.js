@@ -1,11 +1,25 @@
 import Image from "next/image";
+import { useContext, useEffect } from "react";
+import { RoomContext, SpecificContext } from "./context/ChatContext";
 
-const Chat = ({ image, name, clicked }) => {
+
+const Chat = ({ image, name, clicked, chatRoom }) => {
+
+    const [selectedRoom, setSelectedRoom] = useContext(RoomContext);
+    const [room, setRoom] = useContext(SpecificContext);
+
+    useEffect(() => {
+            setRoom(selectedRoom.room)
+
+       
+        console.log('room', room)
+    },[selectedRoom])
+    
     return(
-        <div className={clicked ? "flex justify-between   items-center py-3 px-3 bg-gray-200":"flex justify-between   items-center py-3 px-3 bg-gray-100"}>
+        <div onClick={() => setSelectedRoom(chatRoom)} className={clicked ? "flex justify-between   items-center py-3 px-3 bg-gray-200 cursor-pointer":"flex justify-between   items-center py-3 px-3 bg-gray-100 cursor-pointer"}>
             {/* Image */}
 
-            <img className="rounded-full h-[50px] w-[50px]" src="https://cdn.discordapp.com/attachments/817048198022430761/950061483608391751/f1.png" height={70} width={70}/>
+            <img className="rounded-full h-[50px] w-[50px]" src={image} height={70} width={70}/>
 
             {/* Name */}
             <div className="flex-col space-y-2 flex-1 ml-10">

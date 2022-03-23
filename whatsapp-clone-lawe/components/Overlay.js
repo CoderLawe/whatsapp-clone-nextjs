@@ -6,7 +6,9 @@ import Chats from "./Chats";
 import RightNav from "./RightNav";
 import ChatBubbles from "./ChatBubbles";
 import BottomRight from "./BottomRight";
+import { useState } from "react";
 const Overlay = () => {
+   
     return(
         <div className=" bg-gray-300 mx-5 my-7 z-50 -mt-16 h-[95vh] shadow-lg ">
             

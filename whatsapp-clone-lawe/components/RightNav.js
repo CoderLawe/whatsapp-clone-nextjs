@@ -1,6 +1,10 @@
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { useContext } from "react";
+import { RoomContext } from "./context/ChatContext";
 const RightNav = () => {
+    const [selectedRoom, setSelectedRoom] = useContext(RoomContext)
+   
     return(
         <div className="flex bg-nav-gray p-2 border-l border-gray-300 items-center justify-between   ">
             {/* Right side */}
@@ -10,7 +14,10 @@ const RightNav = () => {
                 <img className="rounded-full h-[50px] w-[50px]" src="https://cdn.discordapp.com/attachments/817048198022430761/950061483608391751/f1.png" height={70} width={70}/>
                 {/* Name */}
                 <div className="flex-col">
-                    <p>Name goes here dude</p>
+                    { selectedRoom && (
+                        <p>{selectedRoom.name}</p>
+
+                    )}
                 </div>
             </div>
 
